@@ -1,0 +1,133 @@
+<html>
+	<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Add icon library -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<style>
+	body {background-color: #2b522d;
+  	font-family: Arial, sans-serif;
+  	margin: 20px;}
+/* Button Settings */
+	.btn {background-color: #443954;
+  		border: none;
+  		color: white;
+  		padding: 12px 16px;
+  		font-size: 16px;
+  		cursor: pointer;
+  		position: relative;}
+
+/* Popup menu styles */
+	.popup-menu {display: none;
+  		position: absolute;
+  		background-color: #443954;
+  		min-width: 150px;
+  		box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+  		z-index: 1;
+  		left: 0;
+  		top: 100%;}
+
+	.popup-menu a {color: white;
+  		padding: 10px 12px;
+  		text-decoration: none;
+  		display: block;}
+
+/* Darker background on mouse-over */
+		.btn:hover {background-color: DarkBlue;}
+
+/* Main menu styles */
+	.main-menu {background-color: #443954;
+  		padding: 30px;
+  		margin: 20px 0;
+  		width: 65%;
+  		box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+  		border-radius: 10px;}
+
+/* Align buttons to the top right */
+	.navbar {position: absolute;
+  		top: 8px;
+  		right: 20px;
+  		display: flex;
+ 		gap: px;}
+
+
+        	.btn-container {position: absolute;
+            	top: 10px;
+            	right: 200px;}
+
+    		</style>
+	</head>
+		<style>
+
+	.fa-facebook {background: #3B5998; color: white;}
+
+	.fa-instagram {background: #125688; color: white;}
+
+	.fa {padding: 5px;font-size: 20px;width: 50px;text-align: center;text-decoration: none;margin: 2px 2px;}
+
+	.fa:hover {opacity: 0.7;}
+		</style>
+<body>
+
+	<div class="navbar">
+  	<div style="position: relative;">
+    		<button class="btn" onclick="toggleMenu('menuPopup1')"><i class="fa fa-bars"></i>Sub-Topics</button>
+    		<div id="menuPopup1" class="popup-menu">
+      	<a href="hobbiesaziz.html">Hobbies & Interests</a>
+	<a href="familyaziz.html">Family Members</a>
+	</div>
+  </div>
+</div>
+
+		<font color=white><b><h1>Personal Portfolio</h1></b></font>
+		<div class="main-menu">
+	
+ 	<style>
+        	.container {display: flex;
+            		align-items: center; /* Align items vertically */
+            		margin-bottom: 20px;}
+        	
+		.image {width: 250px;
+           		height: 300px;
+            		border: 3px solid black; /* border */
+            		border-radius: 150px; /* makes it rounder */
+            		margin-right: 15px; /* adds space between image and text */}
+            		font-size: 58px;
+            		max-width: 400px;}
+	</style>
+
+		<div class="btn-container">
+        	<a href="Mainpage.html" class="btn">
+            	<i class="fa fa-home"></i>
+        </a>
+    	</div>
+		<div class="container">
+        <img src="azez.jpeg" class="image" alt="face">
+        <ul>
+	<font color=white size=4><b><p>Salamualaikum, im Aziz Tejada but you can call me just Aziz. 
+I stand around 5'2 or 5'3 on a good day im 14 yrs old turning 15 this april and i currently dont know my exact weight 
+but i carry myself in with agility and precise movements im a Grade-9 Ict Students, my partner is Ardie Orlina on this project website 
+very cutie since grade-7 were friends.</p>
+		<li>Absolute promise "Zero" and "clean" Criminal record</li>
+		<li>Born in April 14,2010</li>
+		<li>5'2-5'3(in a good day)</li>
+		<li>light enough(41-42kg)</li></font>
+	</ul>
+
+	</div>
+	<a href="https://www.facebook.com/aziz.tejada.2024" class="fa fa-facebook"></a>
+	<a href="https://www.instagram.com/a5tzj?igsh=a21nbTQ3NG53aHZl" class="fa fa-instagram"></a>
+
+	<script>
+		function toggleMenu(menuId) {var menu = document.getElementById(menuId);
+	menu.style.display = menu.style.display === "block" ? "none" : "block";}
+
+	// Close the menu if the user clicks outside of it
+	window.onclick = function(event) {
+  	if (!event.target.closest('.btn')) {
+    document.querySelectorAll('.popup-menu').forEach(menu => menu.style.display = "none");
+  }
+}
+		</script>
+
+	</body>
+</html>

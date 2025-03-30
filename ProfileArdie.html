@@ -1,0 +1,133 @@
+<html>
+	<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Add icon library -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<style>
+	body {background-color: khaki;
+  	font-family: Arial, sans-serif;
+  	margin: 20px;}
+/* Button Settings */
+	.btn {background-color: #443954;
+  		border: none;
+  		color: white;
+  		padding: 12px 16px;
+  		font-size: 16px;
+  		cursor: pointer;
+  		position: relative;}
+
+/* Popup menu styles */
+	.popup-menu {display: none;
+  		position: absolute;
+  		background-color: #bab54c;
+  		min-width: 150px;
+  		box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+  		z-index: 1;
+  		left: 0;
+  		top: 100%;}
+
+	.popup-menu a {color: white;
+  		padding: 10px 12px;
+  		text-decoration: none;
+  		display: block;}
+
+/* Darker background on mouse-over */
+		.btn:hover {background-color: DarkBlue;}
+
+/* Main menu styles */
+	.main-menu {background-color: #443954;
+  		padding: 30px;
+  		margin: 20px 0;
+  		width: 60%;
+  		box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+  		border-radius: 10px;}
+
+/* Align buttons to the top right */
+	.navbar {position: absolute;
+  		top: 8px;
+  		right: 20px;
+  		display: flex;
+ 		gap: px;}
+
+        	.btn-container {position: absolute;
+            	top: 10px;
+            	right: 200px;}
+
+    		</style>
+	</head>
+		<style>
+
+	.fa-facebook {background: #3B5998; color: white;}
+
+	.fa-instagram {background: #125688; color: white;}
+
+	.fa {padding: 5px;font-size: 20px;width: 50px;text-align: center;text-decoration: none;margin: 2px 2px;}
+
+	.fa:hover {opacity: 0.7;}
+		</style>
+<body>
+
+	<div class="navbar">
+  	<div style="position: relative;">
+    		<button class="btn" onclick="toggleMenu('menuPopup1')"><i class="fa fa-bars"></i>Sub-Topics</button>
+    		<div id="menuPopup1" class="popup-menu">
+      	<a href="hobbiesardie.html">Hobbies & Interests</a>
+	<a href="familyardie.html">Family Members</a>
+	</div>
+  </div>
+</div>
+
+		<font color= black><h1>Personal Portfolio</h1></font>
+		<div class="main-menu">
+	
+ 	<style>
+        	.container {display: flex;
+            		align-items: center; /* Align items vertically */
+            		margin-bottom: 20px;}
+        	
+		.image {width: 250px;
+           		height: 300px;
+            		border: 3px solid black; /* border */
+            		border-radius: 150px; /* makes it rounder */
+            		margin-right: 15px; /* adds space between image and text */}
+            		font-size: 58px;
+            		max-width: 400px;}
+	</style>   	
+
+		<div class="btn-container">
+        	<a href="Mainpage.html" class="btn">
+            	<i class="fa fa-home"></i>
+        </a>
+    	</div>
+
+
+		<div class="container">
+        <img src="Ardeh.png" class="image" alt="face">
+	<ul>       
+<font color=white size=4><b><p>Hello Everyone! I am Ardie G. Orlina but you can call me "di" or "'die" for short. 
+My height ks 5'4 and my age is 14 years old but i'm turning 15 this August, I weigh around 68kg and my partner on this 
+project is aziz tejada AKA kidbomba.</p>
+		<li>Absolute Zero and clean Criminal record</li>
+		<li>Born in August 10,2010</li>
+		<li>5'3-5'4</li>
+		<li>Heavy enough(68kg)</li></font>
+	</ul>
+
+	</div>
+	<a href="https://www.facebook.com/share/1ANxGze3jM/" class="fa fa-facebook"></a>
+	<a href="https://www.instagram.com/rdkoi1011?igsh=MWtiaGl3bXJjNG0xMg==" class="fa fa-instagram"></a>
+
+	<script>
+		function toggleMenu(menuId) {var menu = document.getElementById(menuId);
+	menu.style.display = menu.style.display === "block" ? "none" : "block";}
+
+	// Close the menu if the user clicks outside of it
+	window.onclick = function(event) {
+  	if (!event.target.closest('.btn')) {
+    document.querySelectorAll('.popup-menu').forEach(menu => menu.style.display = "none");
+  }
+}
+		</script>
+
+	</body>
+</html>

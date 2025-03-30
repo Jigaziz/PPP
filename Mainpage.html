@@ -1,0 +1,129 @@
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Group Ardie/Aziz Project</title>
+<!-- Add icon library -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<style>
+	body {background-color: #352c42;
+  	font-family: Arial, sans-serif;
+  	margin: 20px;}
+/*button things*/
+	.btn {background-color: purple;
+  		border: none;
+  		color: white;
+  		padding: 12px 16px;
+  		font-size: 16px;
+  		cursor: pointer;
+  		position: relative;}
+
+		.btn:hover {background-color: DarkBlue;}
+
+/* Popup menu styles */
+	.popup-menu {display: none;
+  		position: absolute;
+  		background-color: #352c42;
+  		min-width: 150px;
+  		box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+  		z-index: 1;
+  		left: 0;
+  		top: 100%;}
+
+	.popup-menu a {color: white;
+  		padding: 10px 12px;
+  		text-decoration: none;
+  		display: block;}
+
+	.popup-menu a:hover {background-color: #1abc9c;}
+
+/* Main menu styles */
+	.main-menu {background-color: #443954;
+  		padding: 30px;
+  		margin: 20px 0;
+  		width: 65%;
+  		box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+  		border-radius: 10px;}
+
+/* Align buttons to the top right */
+	.navbar {position: absolute;
+  		top: 20px;
+  		right: 20px;
+  		display: flex;
+  		gap: 10px;}
+
+		</style>
+	</head>
+<body>
+
+	<div class="navbar">
+  	<div style="position: relative;">
+    		<button class="btn" onclick="toggleMenu('menuPopup1')"><i class="fa fa-bars"></i>About us</button>
+    		<div id="menuPopup1" class="popup-menu">
+	<a href="ProfileAziz.html">Aziz's Profile</a>
+      	<a href="ProfileArdie.html">Ardie's Profile</a>
+	</div>
+  </div>
+  
+	<div style="position: relative;">
+   		<button class="btn" onclick="toggleMenu('menuPopup2')"><i class="fa fa-folder"></i>Pictures</button>
+    		<div id="menuPopup2" class="popup-menu">
+      	<a href="picturesAziz.html">Aziz's Pictures/dates</a>
+      	<a href="picturesArdie.html">Ardie's Pictures/dates</a>
+	<a href="Together.html">Our Picture together</a>
+	</div>
+  </div>
+
+  	<div style="position: relative;">
+    		<button class="btn" onclick="toggleMenu('menuPopup3')"><i class="fa fa-folder"></i>Semi Important<br><b>information</b></button>
+    		<div id="menuPopup3" class="popup-menu">
+      	<a href="dailyroutineAziz.html">Dailylife/Routine<br><b>Aziz</b></a>
+      	<a href="dailyroutineArdie.html">Dailylife/Routine<br><b>Ardie</b></a>
+    </div>
+  </div>
+</div>
+
+		<font color=white><h1>Personal Portfolio</h1></font>
+		<div class="main-menu">
+	
+ 	<style>
+        	.container {display: flex;
+            		align-items: center; /* Align items vertically */
+            		margin-bottom: 20px;}
+        	
+		.image {width: 250px;
+           		height: 300px;
+            		border: 3px solid black; /* border */
+            		border-radius: 150px; /* makes it rounder */
+            		margin-right: 15px; /* adds space between image and text */}
+            		font-size: 58px;
+            		max-width: 400px;}
+	</style>
+
+	<div class="container">
+        	<img src="azez.jpeg" class="image" alt="Example Image">
+        	<font color=white size=6><b><p>hello im Aziz Tejada im a Grade-9 Ict Students, my partner is Ardie.</p></font>
+		    	
+	</div>
+<hr class="dashed">
+
+    
+	<div class="container">
+        	<img src="Ardeh.png" class="image" alt="Example Image">
+        	<font color=white size=6><p>Hello im Ardie Orlina im also a Grade-9 Ict Student, i am the partner of Aziz</p></font>
+	</div>
+
+
+		<script>
+		function toggleMenu(menuId) {var menu = document.getElementById(menuId);
+	menu.style.display = menu.style.display === "block" ? "none" : "block";}
+
+	// Close the menu if the user clicks outside of it
+	window.onclick = function(event) {
+  	if (!event.target.closest('.btn')) {
+    document.querySelectorAll('.popup-menu').forEach(menu => menu.style.display = "none");
+  }
+}
+		</script>
+
+	</body>
+</html>
