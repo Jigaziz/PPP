@@ -1,129 +1,299 @@
 <html>
-	<head>
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Group Ardie/Aziz Project</title>
-<!-- Add icon library -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-		<style>
-	body {background-color: #352c42;
-  	font-family: Arial, sans-serif;
-  	margin: 20px;}
-/*button things*/
-	.btn {background-color: purple;
-  		border: none;
-  		color: white;
-  		padding: 12px 16px;
-  		font-size: 16px;
-  		cursor: pointer;
-  		position: relative;}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio - Aziz & Ardie</title>
+    <!-- Importing a nice font from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
-		.btn:hover {background-color: DarkBlue;}
+    <style>
+        /* --- General Reset & Variables --- */
+        :root {
+            --primary-color: #443954;
+            --accent-color: #1abc9c;
+            --dark-bg: #2c2436;
+            --text-color: #ffffff;
+            --hover-color: #5d5070;
+        }
 
-/* Popup menu styles */
-	.popup-menu {display: none;
-  		position: absolute;
-  		background-color: #352c42;
-  		min-width: 150px;
-  		box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
-  		z-index: 1;
-  		left: 0;
-  		top: 100%;}
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-	.popup-menu a {color: white;
-  		padding: 10px 12px;
-  		text-decoration: none;
-  		display: block;}
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: var(--text-color);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
 
-	.popup-menu a:hover {background-color: #1abc9c;}
+        /* --- Navigation Bar --- */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(68, 57, 84, 0.95);
+            padding: 15px 20px;
+            display: flex;
+            justify-content: flex-end;
+            gap: 15px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            z-index: 1000;
+        }
 
-/* Main menu styles */
-	.main-menu {background-color: #443954;
-  		padding: 30px;
-  		margin: 20px 0;
-  		width: 65%;
-  		box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
-  		border-radius: 10px;}
+        .nav-item {
+            position: relative;
+        }
 
-/* Align buttons to the top right */
-	.navbar {position: absolute;
-  		top: 20px;
-  		right: 20px;
-  		display: flex;
-  		gap: 10px;}
+        .btn {
+            background-color: transparent;
+            color: white;
+            border: 2px solid var(--accent-color);
+            padding: 10px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
 
-		</style>
-	</head>
+        .btn:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(26, 188, 156, 0.4);
+        }
+
+        /* --- Dropdown Menu --- */
+        .popup-menu {
+            display: none;
+            position: absolute;
+            top: 120%; /* Position below button */
+            right: 0;
+            background-color: var(--dark-bg);
+            min-width: 200px;
+            border-radius: 8px;
+            box-shadow: 0px 8px 16px rgba(0,0,0,0.5);
+            z-index: 1;
+            overflow: hidden;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .popup-menu a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            transition: background 0.2s;
+        }
+
+        .popup-menu a:last-child {
+            border-bottom: none;
+        }
+
+        .popup-menu a:hover {
+            background-color: var(--accent-color);
+            padding-left: 20px; /* Slide effect on hover */
+        }
+
+        /* --- Main Content Area --- */
+        .main-content {
+            width: 90%;
+            max-width: 800px;
+            margin-top: 100px; /* Space for fixed navbar */
+            margin-bottom: 50px;
+            background-color: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--accent-color);
+        }
+
+        /* --- Profile Cards --- */
+        .profile-card {
+            display: flex;
+            align-items: center;
+            margin-bottom: 40px;
+            background: rgba(0,0,0,0.2);
+            padding: 20px;
+            border-radius: 15px;
+        }
+
+        .image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 4px solid var(--accent-color);
+            object-fit: cover;
+            margin-right: 25px;
+            box-shadow: 0 0 15px rgba(26, 188, 156, 0.3);
+        }
+
+        .text-content {
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .text-content b {
+            color: var(--accent-color);
+            font-size: 1.3rem;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        hr {
+            border: 0;
+            height: 1px;
+            background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(255, 255, 255, 0.75), rgba(0, 0, 0, 0));
+            margin: 30px 0;
+        }
+
+        /* --- Mobile Responsiveness --- */
+        @media (max-width: 600px) {
+            .navbar {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+            .profile-card {
+                flex-direction: column;
+                text-align: center;
+            }
+            .image {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+            .popup-menu {
+                right: 0;
+                left: 0;
+                width: 100%;
+                position: relative;
+                top: 0;
+                box-shadow: none;
+                background: transparent;
+            }
+            .popup-menu a {
+                background-color: rgba(255,255,255,0.1);
+                margin-top: 5px;
+                border-radius: 5px;
+            }
+        }
+    </style>
+</head>
 <body>
 
-	<div class="navbar">
-  	<div style="position: relative;">
-    		<button class="btn" onclick="toggleMenu('menuPopup1')"><i class="fa fa-bars"></i>About us</button>
-    		<div id="menuPopup1" class="popup-menu">
-	<a href="ProfileAziz.html">Aziz's Profile</a>
-      	<a href="ProfileArdie.html">Ardie's Profile</a>
-	</div>
-  </div>
-  
-	<div style="position: relative;">
-   		<button class="btn" onclick="toggleMenu('menuPopup2')"><i class="fa fa-folder"></i>Pictures</button>
-    		<div id="menuPopup2" class="popup-menu">
-      	<a href="picturesAziz.html">Aziz's Pictures/dates</a>
-      	<a href="picturesArdie.html">Ardie's Pictures/dates</a>
-	<a href="Together.html">Our Picture together</a>
-	</div>
-  </div>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-item">
+            <button class="btn" onclick="toggleMenu('menuPopup1')">
+                <i class="fa fa-user"></i> About Us
+            </button>
+            <div id="menuPopup1" class="popup-menu">
+                <a href="ProfileAziz.html">Aziz's Profile</a>
+                <a href="ProfileArdie.html">Ardie's Profile</a>
+            </div>
+        </div>
+        
+        <div class="nav-item">
+            <button class="btn" onclick="toggleMenu('menuPopup2')">
+                <i class="fa fa-images"></i> Pictures
+            </button>
+            <div id="menuPopup2" class="popup-menu">
+                <a href="picturesAziz.html">Aziz's Gallery</a>
+                <a href="picturesArdie.html">Ardie's Gallery</a>
+                <a href="Together.html">Together</a>
+            </div>
+        </div>
 
-  	<div style="position: relative;">
-    		<button class="btn" onclick="toggleMenu('menuPopup3')"><i class="fa fa-folder"></i>Semi Important<br><b>information</b></button>
-    		<div id="menuPopup3" class="popup-menu">
-      	<a href="dailyroutineAziz.html">Dailylife/Routine<br><b>Aziz</b></a>
-      	<a href="dailyroutineArdie.html">Dailylife/Routine<br><b>Ardie</b></a>
+        <div class="nav-item">
+            <button class="btn" onclick="toggleMenu('menuPopup3')">
+                <i class="fa fa-info-circle"></i> Info
+            </button>
+            <div id="menuPopup3" class="popup-menu">
+                <a href="dailyroutineAziz.html">Aziz's Routine</a>
+                <a href="dailyroutineArdie.html">Ardie's Routine</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <h1>Personal Portfolio</h1>
+
+        <!-- Aziz Section -->
+        <div class="profile-card">
+            <!-- Make sure your image file is named correctly (azez -> aziz) -->
+            <img src="azez.jpeg" class="image" alt="Aziz Tejada">
+            <div class="text-content">
+                <b>Aziz Tejada</b>
+                <p>Hello! I am a Grade 9 ICT Student. I am passionate about technology and coding. My partner in this project is Ardie.</p>
+            </div>
+        </div>
+
+        <hr>
+
+        <!-- Ardie Section -->
+        <div class="profile-card">
+            <img src="Ardeh.png" class="image" alt="Ardie Orlina">
+            <div class="text-content">
+                <b>Ardie Orlina</b>
+                <p>Hello! I am also a Grade 9 ICT Student. I enjoy working on group projects and learning new web design skills.</p>
+            </div>
+        </div>
     </div>
-  </div>
-</div>
 
-		<font color=white><h1>Personal Portfolio</h1></font>
-		<div class="main-menu">
-	
- 	<style>
-        	.container {display: flex;
-            		align-items: center; /* Align items vertically */
-            		margin-bottom: 20px;}
-        	
-		.image {width: 250px;
-           		height: 300px;
-            		border: 3px solid black; /* border */
-            		border-radius: 150px; /* makes it rounder */
-            		margin-right: 15px; /* adds space between image and text */}
-            		font-size: 58px;
-            		max-width: 400px;}
-	</style>
+    <script>
+        function toggleMenu(menuId) {
+            var menu = document.getElementById(menuId);
+            
+            // Close all other menus first (optional, for cleaner UI)
+            var allMenus = document.querySelectorAll('.popup-menu');
+            allMenus.forEach(function(m) {
+                if (m.id !== menuId) {
+                    m.style.display = "none";
+                }
+            });
 
-	<div class="container">
-        	<img src="azez.jpeg" class="image" alt="Example Image">
-        	<font color=white size=6><b><p>hello im Aziz Tejada im a Grade-9 Ict Students, my partner is Ardie.</p></font>
-		    	
-	</div>
-<hr class="dashed">
+            // Toggle current menu
+            if (menu.style.display === "block") {
+                menu.style.display = "none";
+            } else {
+                menu.style.display = "block";
+            }
+        }
 
-    
-	<div class="container">
-        	<img src="Ardeh.png" class="image" alt="Example Image">
-        	<font color=white size=6><p>Hello im Ardie Orlina im also a Grade-9 Ict Student, i am the partner of Aziz</p></font>
-	</div>
-
-
-		<script>
-		function toggleMenu(menuId) {var menu = document.getElementById(menuId);
-	menu.style.display = menu.style.display === "block" ? "none" : "block";}
-
-	// Close the menu if the user clicks outside of it
-	window.onclick = function(event) {
-  	if (!event.target.closest('.btn')) {
-    document.querySelectorAll('.popup-menu').forEach(menu => menu.style.display = "none");
-  }
-}
-		</script>
-
-	</body>
+        // Close the menu if the user clicks outside of it
+        window.onclick = function(event) {
+            if (!event.target.closest('.btn')) {
+                document.querySelectorAll('.popup-menu').forEach(menu => {
+                    menu.style.display = "none";
+                });
+            }
+        }
+    </script>
+</body>
 </html>
