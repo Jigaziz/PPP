@@ -1,11 +1,14 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Personal Portfolio - Ardie G. Orlina</title>
-
+    
+   
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <style>
@@ -33,6 +36,7 @@
             align-items: center;
         }
 
+        
         .navbar {
             position: fixed;
             top: 0;
@@ -63,6 +67,7 @@
             display: flex;
             align-items: center;
             gap: 8px;
+            text-decoration: none; 
         }
 
         .btn:hover {
@@ -109,7 +114,7 @@
             padding-left: 20px; 
         }
 
-
+        
         .main-content {
             width: 90%;
             max-width: 800px;
@@ -132,7 +137,7 @@
             color: var(--accent-color);
         }
 
-
+        
         .profile-card {
             display: flex;
             align-items: center;
@@ -164,6 +169,7 @@
             margin-bottom: 10px;
         }
 
+        
         .stats-list {
             list-style: none;
             margin-top: 15px;
@@ -191,6 +197,7 @@
             margin: 30px 0;
         }
 
+       
         .social-container {
             display: flex;
             justify-content: center;
@@ -203,6 +210,9 @@
             font-size: 30px;
             transition: all 0.3s ease;
             text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .fa-social:hover {
@@ -210,6 +220,7 @@
             color: var(--accent-color);
         }
 
+        
         @media (max-width: 600px) {
             .navbar {
                 justify-content: center;
@@ -236,86 +247,13 @@
                 background-color: rgba(255,255,255,0.1);
                 margin-top: 5px;
                 border-radius: 5px;
+                    
+                
+                <nav class="navbar">
+        <div class="nav-item">
+            <button class="btn
             }
         }
     </style>
 </head>
 <body>
-
-
-    <nav class="navbar">
-        <div class="nav-item">
-            <button class="btn" onclick="toggleMenu('menuPopup1')">
-                <i class="fa fa-bars"></i> Sub-Topics
-            </button>
-            <div id="menuPopup1" class="popup-menu">
-                <a href="hobbiesardie.html">Hobbies & Interests</a>
-                <a href="familyardie.html">Family Members</a>
-            </div>
-        </div>
-        
-        <div class="nav-item">
-            <a href="Mainpage.html" class="btn" style="border:none; padding: 10px;">
-                <i class="fa fa-home"></i>
-            </a>
-        </div>
-    </nav>
-
-    <div class="main-content">
-        <h1>Personal Portfolio</h1>
-        
-        <div class="profile-card">
-            <img src="Ardeh.png" class="image" alt="Ardie Orlina">
-            <div class="text-content">
-                <b>Ardie G. Orlina</b>
-                <p>Hello Everyone! I am Ardie G. Orlina but you can call me "di" or "'die" for short. 
-                My height is 5'4 and my age is 14 years old but I'm turning 15 this August. 
-                I weigh around 68kg and my partner on this project is Aziz Tejada AKA kidbomba.</p>
-                
-                <ul class="stats-list">
-                    <li>Absolute Zero and clean Criminal record</li>
-                    <li>Born in August 10, 2010</li>
-                    <li>5'3-5'4</li>
-                    <li>Heavy enough (68kg)</li>
-                </ul>
-            </div>
-        </div>
-
-        <hr>
-
-        <div class="social-container">
-            <a href="https://www.facebook.com/share/1ANxGze3jM/" class="fa-social fa fa-facebook" target="_blank"></a>
-            <a href="https://www.instagram.com/rdkoi1011?igsh=MWtiaGl3bXJjNG0xMg==" class="fa-social fa fa-instagram" target="_blank"></a>
-        </div>
-    </div>
-
-    <script>
-        function toggleMenu(menuId) {
-            var menu = document.getElementById(menuId);
-            
-   
-            var allMenus = document.querySelectorAll('.popup-menu');
-            allMenus.forEach(function(m) {
-                if (m.id !== menuId) {
-                    m.style.display = "none";
-                }
-            });
-
-            if (menu.style.display === "block") {
-                menu.style.display = "none";
-            } else {
-                menu.style.display = "block";
-            }
-        }
-        
-        window.onclick = function(event) {
-            if (!event.target.closest('.btn')) {
-                document.querySelectorAll('.popup-menu').forEach(menu => {
-                    menu.style.display = "none";
-                });
-            }
-        }
-    </script>
-</body>
-</html>
-
