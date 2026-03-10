@@ -1,7 +1,6 @@
 <html>
 	<head>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- Add icon library -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 		<style>
 	body {background-color: #2b522d;
@@ -83,14 +82,14 @@
 	
  	<style>
         	.container {display: flex;
-            		align-items: center; /* Align items vertically */
+            		align-items: center;
             		margin-bottom: 20px;}
         	
 		.image {width: 250px;
            		height: 300px;
-            		border: 3px solid black; /* border */
-            		border-radius: 150px; /* makes it rounder */
-            		margin-right: 15px; /* adds space between image and text */}
+            		border: 3px solid black; 
+            		border-radius: 150px; 
+            		margin-right: 15px; 
             		font-size: 58px;
             		max-width: 400px;}
 	</style>
@@ -121,7 +120,6 @@ very cutie since grade-7 were friends.</p>
 		function toggleMenu(menuId) {var menu = document.getElementById(menuId);
 	menu.style.display = menu.style.display === "block" ? "none" : "block";}
 
-	// Close the menu if the user clicks outside of it
 	window.onclick = function(event) {
   	if (!event.target.closest('.btn')) {
     document.querySelectorAll('.popup-menu').forEach(menu => menu.style.display = "none");
@@ -131,3 +129,4 @@ very cutie since grade-7 were friends.</p>
 
 	</body>
 </html>
+
