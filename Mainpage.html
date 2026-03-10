@@ -1,15 +1,15 @@
 <html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Portfolio - Aziz & Ardie</title>
-    <!-- Importing a nice font from Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <!-- FontAwesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Personal Portfolio - Aziz & Ardie</title>
+        
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <style>
-        /* --- General Reset & Variables --- */
+       
         :root {
             --primary-color: #443954;
             --accent-color: #1abc9c;
@@ -34,7 +34,7 @@
             align-items: center;
         }
 
-        /* --- Navigation Bar --- */
+        
         .navbar {
             position: fixed;
             top: 0;
@@ -73,11 +73,11 @@
             box-shadow: 0 4px 15px rgba(26, 188, 156, 0.4);
         }
 
-        /* --- Dropdown Menu --- */
+        
         .popup-menu {
             display: none;
             position: absolute;
-            top: 120%; /* Position below button */
+            top: 120%; 
             right: 0;
             background-color: var(--dark-bg);
             min-width: 200px;
@@ -108,14 +108,14 @@
 
         .popup-menu a:hover {
             background-color: var(--accent-color);
-            padding-left: 20px; /* Slide effect on hover */
+            padding-left: 20px; 
         }
 
-        /* --- Main Content Area --- */
+        
         .main-content {
             width: 90%;
             max-width: 800px;
-            margin-top: 100px; /* Space for fixed navbar */
+            margin-top: 100px; 
             margin-bottom: 50px;
             background-color: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(10px);
@@ -134,7 +134,7 @@
             color: var(--accent-color);
         }
 
-        /* --- Profile Cards --- */
+        
         .profile-card {
             display: flex;
             align-items: center;
@@ -239,14 +239,10 @@
             </div>
         </div>
     </nav>
-
-    <!-- Main Content -->
     <div class="main-content">
         <h1>Personal Portfolio</h1>
-
-        <!-- Aziz Section -->
         <div class="profile-card">
-            <!-- Make sure your image file is named correctly (azez -> aziz) -->
+            
             <img src="azez.jpeg" class="image" alt="Aziz Tejada">
             <div class="text-content">
                 <b>Aziz Tejada</b>
@@ -256,7 +252,6 @@
 
         <hr>
 
-        <!-- Ardie Section -->
         <div class="profile-card">
             <img src="Ardeh.png" class="image" alt="Ardie Orlina">
             <div class="text-content">
@@ -278,15 +273,13 @@
                 }
             });
 
-            // Toggle current menu
             if (menu.style.display === "block") {
                 menu.style.display = "none";
             } else {
                 menu.style.display = "block";
             }
         }
-
-        // Close the menu if the user clicks outside of it
+        
         window.onclick = function(event) {
             if (!event.target.closest('.btn')) {
                 document.querySelectorAll('.popup-menu').forEach(menu => {
@@ -297,3 +290,4 @@
     </script>
 </body>
 </html>
+
